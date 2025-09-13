@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="bib">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="book" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="title">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+					<!--Serve quando un elemento ha del testo dentro e degli attributi.
+					Funziona così:
+					Prendi un tipo semplice (es. xs:string per del testo).
+					Lo “estendi” aggiungendo attributi. 
+					<title lang="ita">Lilly</title>
+					Contenuto: “Lilly” → testo → tipo semplice (xs:string)
+					Attributo: lang="ita" → tipo complesso necessario
+					“Questo elemento è una stringa di testo e ha un attributo lang obbligatorio.”
+					-->
+                      <xs:attribute name="lang" type="xs:string" use="required"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="prezzo" type="xs:decimal"/>
+            </xs:sequence>
+            <xs:attribute name="idb" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
