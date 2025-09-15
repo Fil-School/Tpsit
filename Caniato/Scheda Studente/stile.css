@@ -1,0 +1,124 @@
+
+body {
+    font-family: 'Atkinson';
+
+    /* togli margini e padding  preimpostati dal browser */
+    margin: 0px;
+    padding: 0px;
+
+    /* scritte in bianco */
+    color: #FFF;
+
+    /* sfondo nero */
+    background-color: #000;
+}
+
+a { /* rimuovi stili preimpostati dai link */
+    color: inherit;
+    text-decoration: inherit;
+}
+
+a:hover { 
+    text-decoration: underline;
+}
+
+/* INIZIO STILE DELL'INTESTAZIONE (HEADER) */
+
+#header {
+    position: relative; /* contenitore */
+}
+#header div {
+    /* posiziona questo div rispetto al contenitore (quello con position relative) */
+    position: absolute;
+
+    /* posiziona la scritta nell'angolo in basso a sx rispetto al div che la contiene */
+    left: 0px;
+    bottom: 0px;
+
+    /* lasciando pero' po' di spazio dai bordi */
+    padding: 64px;
+
+    /* sfondo nero trasparente (migliora leggibilita' delle scritte) */
+    background-color: rgba(0, 0, 0, 0.7);
+}
+#header div .title {
+    font-size: 96px;
+    font-weight: bold;
+}
+#header div .subtitle {
+    font-size: 64px;
+    font-weight: bold;
+    font-style: italic;
+}
+#header img {
+    width: 100%;
+}
+
+/* FINE STILE DELL'INTESTAZIONE (HEADER) */
+
+
+/* INIZIO STILE DELL'ELENCO DI SCHEDE */
+
+.elenco-card {
+    margin: 32px;
+
+    /* magia per fare in modo che le schede contenute in questo div si posizionino "bene" */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    margin: 15px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #FFF;
+    color: #000;
+}
+
+.card img {
+    width: 300px;
+    height: 300px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card span {
+    font-size: 32px;
+}
+
+/* FINE STILE DELL'ELENCO DI SCHEDE */
+
+/*
+Importo un font da file in diverse versioni:
+nomale, grassetto, corsivo e grassetto+corsivo
+*/
+@font-face {
+    font-family: 'Atkinson';
+    src: url('fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Atkinson';
+    src: url('fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Atkinson';
+    src: url('fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Atkinson';
+    src: url('fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}

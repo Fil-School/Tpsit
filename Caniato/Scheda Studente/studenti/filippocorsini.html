@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <title>Most random guy ever</title>
+        <link rel="stylesheet" href="../stile.css">
+        <style>
+body {
+    background-size: cover;
+    margin: 64px;
+    min-height: 100vh;
+    background-image: linear-gradient(rgb(0, 217, 255), rgba(0, 0, 0, 0.712)), url(../img/embrace-goku-85.jpg);
+}
+
+
+img {
+    width: 500px;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    border-style: solid;
+    box-shadow: 0 14px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-color: rgba(47, 0, 255, 0.404);
+    position: relative;
+}
+
+ul {
+    color: #ffffff;
+    font-size: 28px;
+    text-align: center;
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 50px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+.titolo {
+    text-align: center;
+    font-size: 100px;
+    margin: 80px auto;
+    margin-bottom: -60px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    animation: slideDown 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    display: block;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translate(-3000%, -50px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+.titolo-sub {
+    text-align: center;
+    margin-top: 30px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(+50%, -50%);
+    color: white;
+    animation: slideDown 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    display: block;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translate(-50%, +100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+.table {
+    margin: 40px auto;
+    border-collapse: collapse;
+    width: 70%;
+    height: 100% auto;
+    padding-top: 30px auto;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 1%;
+}
+
+th, th {
+    padding: 40px;
+    font-size: 35px;
+    text-align: left;
+    margin: 40px;
+}
+
+
+
+
+        </style>
+    </head>
+
+    <body>
+        <div class="hero">
+            <img class="img" src="../img/bob.gif" alt="bob">
+        </div>
+        <h1 class="titolo">Filippo Corsini</h1>
+        <h1 class="titolo-sub" style="animation-delay: 300ms;">Scheda Studente</h1>
+
+        <table class="table">
+                <tr>
+                    <th>Perchè ho scelto informatica?</th>
+                    <td style="font-size: 15px; padding-right: 100px;">Ho scelto informatica perchè fin da piccolo, il mondo dei videogiochi, il mondo dei computer e dell'informatica in generale mi hanno sempre appassionato e intrigato. Dalla possibilità di creare mondi virtuali che seguono le uniche regole dettate dal programmatore sin dal creare programmi in grado di soddisfare ogni tipo di esigenza, progetti, strumenti, e idee divulgati gratuitamente dall'enorme community per svilupparne una versione sempre migliore  </td>
+                </tr>
+                <tr>
+                    <th>Hobbies</th>
+                    <td style="font-size: 25px; padding-right: 100px;">Suono il pianoforte nel tempo libero, 0 aspettative</td>
+                </tr>
+                <tr>
+                    <th style="font-size: 35px;">Sport</th>
+                    <td style="font-size: 25px; padding-right: 100px;">Ho una passione abbastanza forte le la palestra (sala pesi), sollevare ghisa allevia lo stress</td>
+                </tr>
+<tr>
+    <th style="font-size: 35px;">Animali</th>
+    <td id="gatto-container" style="font-size: 25px; padding-right: 100px; position: relative;">
+        Ho un gatto! (HOVER ME)
+        <img src="../img/img1.png" alt="Il mio gatto" style="display:none; position:absolute; left:48%; top:0; width:100px; height:100px; border-radius:12px; box-shadow:0 4px 12px rgb(255, 0, 0);" id="gatto-img">
+    </td>
+</tr>
+
+<script>
+    // Js per displayare l'immagine del gatto al passaggio del mouse
+    document.getElementById('gatto-container').addEventListener('mouseenter', function() {
+        document.getElementById('gatto-img').style.display = 'block';
+    });
+
+    document.getElementById('gatto-container').addEventListener('mouseleave', function() {
+        document.getElementById('gatto-img').style.display = 'none';
+    });
+</script>
+
+
+        </table>
+    </body>
+</html>
