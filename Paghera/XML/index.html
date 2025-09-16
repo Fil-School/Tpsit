@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova XLS</title>
+</head>
+<body>
+ 
+  <!-- 
+    Questo div è dove verrà inserito il risultato della trasformazione XML + XSL 
+  --> 
+  <h1>Risultato trasformazione XML + XSL</h1> 
+  <div id="output"></div> 
+ 
+  <!-- 
+    Script JavaScript: 
+             - Carica i file XML e XSL 
+      - Applica la trasformazione XSLT 
+      - Inserisce il risultato nel div #output 
+  --> 
+  <script> 
+      // Funzione per caricare un file XML o XSL dal server locale 
+    async function loadXML(url) { 
+        // fetch() legge il file dal server 
+      const res = await fetch(url); 
+        // res.text() converte il contenuto in testo 
+      const text = await res.text(); 
+        // DOMParser trasforma il testo in documento XML leggibile da JS 
+      return new DOMParser().parseFromString(text, "application/xml"); 
+    } 
+ 
+      // Funzione principale per applicare la trasformazione XSLT 
+    async function applyXSLT() { 
+      try { 
+          // Carichiamo i file dati.xml e stile.xsl 
+        const xml = await loadXML("books.xml"); 
+        const xsl = await loadXML("books.xsl"); 
+        const body = document.body;
+ 
+          // Creiamo un processore XSLT 
+        const processor = new XSLTProcessor(); 
+        console.log(processor);
+          // Importiamo il foglio di stile XSL 
+        processor.importStylesheet(xsl);
+        console.log(processor); 
+ 
+          // Applichiamo la trasformazione al documento XML 
+        const resultDoc = processor.transformToFragment(xml, document); 
+          // Inseriamo il risultato dentro il div #output 
+        body.getElementById("output").appendChild(resultDoc); 
+        console.log(resultDoc);
+      } catch (e) { 
+          // Se c'è un errore (file non trovato, sintassi sbagliata, ecc.) 
+          // Mostriamo un messaggio di errore rosso nel div #output 
+        document.getElementById("output").innerHTML = 
+          "<p style='color:red'>Errore: " + e.message + "</p>"; 
+          console.log(e.message);
+      } 
+    } 
+ 
+      // Chiamiamo subito la funzione per eseguire la trasformazione 
+    applyXSLT(); 
+  </script>
+    
+</body>
+</html>
