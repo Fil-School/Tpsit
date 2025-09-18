@@ -3,13 +3,29 @@
     <xsl:template match="/">
         <html>
             <body>
-                <h1>Libri</h1>
+                <h1>Tutti Libri</h1>
                 <xsl:for-each select="bib/book">
+                    <xsl:sort select="prezzo" order="ascending"></xsl:sort>
                     <div style="margin-bottom: 1em;">
                         <h2><xsl:value-of select="title"/></h2>
+                    <xsl:if test="prezzo >= 15">
                         <p>Prezzo: <xsl:value-of select="prezzo"/></p>
+                    </xsl:if>    
                     </div>
                 </xsl:for-each>
+
+                <h1>Inglese</h1>
+                <xsl:for-each select="bib/book/title[@lang='eng']">
+                    <xsl:sort select="prezzo" order="ascending"></xsl:sort>
+                    <div style="margin-bottom: 1em;">
+                        <h2><xsl:value-of select="../title"/></h2>
+                    <xsl:if test="../prezzo>= 0">
+                        <p>Prezzo: <xsl:value-of select="../prezzo"/></p>
+                    </xsl:if>    
+                    </div>
+                </xsl:for-each>
+
+
             </body>
         </html>
     </xsl:template>
