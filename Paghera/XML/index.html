@@ -36,7 +36,6 @@
           // Carichiamo i file dati.xml e stile.xsl 
         const xml = await loadXML("books.xml"); 
         const xsl = await loadXML("books.xsl"); 
-        const body = document.body;
  
           // Creiamo un processore XSLT 
         const processor = new XSLTProcessor(); 
@@ -48,7 +47,7 @@
           // Applichiamo la trasformazione al documento XML 
         const resultDoc = processor.transformToFragment(xml, document); 
           // Inseriamo il risultato dentro il div #output 
-        body.getElementById("output").appendChild(resultDoc); 
+        document.getElementById("output").appendChild(resultDoc); 
         console.log(resultDoc);
       } catch (e) { 
           // Se c'è un errore (file non trovato, sintassi sbagliata, ecc.) 
