@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agenzia>
+  <viaggio IDViaggio="V1">
+    <destinazione IDCompagnia="C1">Parigi</destinazione>
+    <durata>5</durata>
+    <prezzo>800</prezzo>
+    <tipo>Città</tipo>
+  </viaggio>
+
+  <viaggio IDViaggio="V2">
+    <destinazione IDCompagnia="C2">Malaga</destinazione>
+    <durata>7</durata>
+    <prezzo>950</prezzo>
+    <tipo>Mare</tipo>
+  </viaggio>
+
+  <viaggio IDViaggio="V3">
+    <destinazione IDCompagnia="C3">New York</destinazione>
+    <durata>10</durata>
+    <prezzo>2000</prezzo>
+    <tipo>Città</tipo>
+  </viaggio>
+
+  <viaggio IDViaggio="V4">
+    <destinazione IDCompagnia="C4">Alpi</destinazione>
+    <durata>6</durata>
+    <prezzo>1200</prezzo>
+    <tipo>Montagna</tipo>
+  </viaggio>
+</agenzia>

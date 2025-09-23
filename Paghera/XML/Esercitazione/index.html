@@ -34,8 +34,8 @@
     async function applyXSLT() { 
       try { 
           // Carichiamo i file dati.xml e stile.xsl 
-        const xml = await loadXML("books.xml"); 
-        const xsl = await loadXML("books.xsl"); 
+        const xml = await loadXML("agenzia.xml"); 
+        const xsl = await loadXML("agenzia.xsl"); 
  
           // Creiamo un processore XSLT 
         const processor = new XSLTProcessor(); 

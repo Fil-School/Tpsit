@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova XLS</title>
+</head>
+<body>
+ 
+  <!-- 
+    Questo div è dove verrà inserito il risultato della trasformazione XML + XSL 
+  --> 
+  <h1>Risultato trasformazione XML + XSL</h1> 
+  <div id="output"></div> 
+ 
+  <!-- 
+    Script JavaScript: 
+             - Carica i file XML e XSL 
+      - Applica la trasformazione XSLT 
+      - Inserisce il risultato nel div #output 
+  --> 
+  <script> 
+      // Funzione per mostrare un messaggio di errore dettagliato
+    function showError(message) {
+        const outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = `<p style='color:red'>Errore: ${message}</p>`;
+        console.error("Errore durante la trasformazione:", message);
+    }
+
+    // Funzione per caricare un file XML o XSL dal server locale
+    async function loadXML(url) {
+        try {
+            const res = await fetch(url);
+            if (!res.ok) {
+                throw new Error(`Impossibile caricare il file: ${url} (status: ${res.status})`);
+            }
+            const text = await res.text();
+            const doc = new DOMParser().parseFromString(text, "application/xml");
+            if (doc.documentElement.nodeName === "parsererror") {
+                throw new Error(`Errore di parsing nel file: ${url}`);
+            }
+            return doc;
+        } catch (e) {
+            showError(e.message);
+            throw e;
+        }
+    }
+
+    // Funzione principale per applicare la trasformazione XSLT
+    async function applyXSLT() {
+        try {
+            const xml = await loadXML("books.xml");
+            const xsl = await loadXML("books.xsl");
+
+            const processor = new XSLTProcessor();
+            processor.importStylesheet(xsl);
+
+            const resultDoc = processor.transformToFragment(xml, document);
+            document.getElementById("output").appendChild(resultDoc);
+        } catch (e) {
+            showError(e.message);
+        }
+    }
+
+    // Esegui la trasformazione al caricamento della pagina
+    applyXSLT();
+  </script>
+    
+</body>
+</html>
