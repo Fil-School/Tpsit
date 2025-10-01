@@ -3,6 +3,9 @@
     <xsl:output method="html" indent="yes"/>
     <xsl:template match="/">
         <html>
+            <head>
+                <title>Risultati Agenzia Viaggi</title>
+            </head>
             <body>
                 <h1>Viaggi con prezzo &lt; 1000</h1>
                 <xsl:for-each select="agenzia/viaggio">
