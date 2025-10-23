@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="books.xsl"?>
-<bib xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="books.xsd">
+<books xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="books.xsd">
   <book idb="b01">
     <title lang="ita">Lilly</title>
     <prezzo>15</prezzo>
@@ -15,4 +15,4 @@
     <title lang="esp">Las cuentas</title>
     <prezzo>16</prezzo>
   </book>
-</bib>
+</books>

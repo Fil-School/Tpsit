@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<album>
+    <foto idfoto="F001">
+        <soggetto>Vacanze mare</soggetto>
+        <datafoto>20 luglio</datafoto>
+        <nomefile>abl2345.jpg</nomefile>
+        <categoria idcat="VA001">vacanze</categoria>
+    </foto>  
+    <foto idfoto="F002">
+        <soggetto>Compleanno Marina</soggetto>
+        <datafoto>14 aprile</datafoto>
+        <nomefile>xy78675.jpg</nomefile>
+        <categoria idcat="FE001">feste</categoria>
+    </foto>
+    <foto idfoto="F003">
+        <soggetto>Vacanze montagna</soggetto>
+        <datafoto>27 luglio</datafoto>
+        <nomefile>xy78676.jpg</nomefile>
+        <categoria idcat="VA001">vacanze</categoria>
+    </foto>
+</album>

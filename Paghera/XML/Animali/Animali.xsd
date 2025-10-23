@@ -1,0 +1,23 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="animali">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="pet" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nome" type="xs:string"/>
+                            <xs:element name="razza">
+                                <xs:complexType>
+                                    <xs:attribute name="id_razza" type="xs:decimal" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="pelo" type="xs:string"/>
+                            <xs:element name="anni" type="xs:decimal"/>
+                        </xs:sequence>
+                        <xs:attribute name="id_pet" type="xs:decimal" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

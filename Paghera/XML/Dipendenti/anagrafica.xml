@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="anagrafica.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<?xml-stylesheet href="anagrafica.xsl" type="text/xsl"?>
+
+<dipendente id_dipendente="d01">
+    <cognome>Rossi</cognome>
+    <nome>Mario</nome>
+    <stipendio>1300</stipendio>
+    <qualifica id_qualifica="">dirigente</qualifica>
+</dipendente>
+
+<dipendente id_dipendente="d01">
+    <cognome>Bianchi</cognome>
+    <nome>Roberto</nome>
+    <stipendio>1100</stipendio>
+    <qualifica id_qualifica="">operaio</qualifica>
+</dipendente>
+
+<dipendente id_dipendente="d01">
+    <cognome>Verdi</cognome>
+    <nome>Paolo</nome>
+    <stipendio>1150</stipendio>
+    <qualifica id_qualifica="">operaio</qualifica>
+</dipendente>
+
+<dipendente id_dipendente="d01">
+    <cognome>Gialli</cognome>
+    <nome>Carlo</nome>
+    <stipendio>1250</stipendio>
+    <qualifica id_qualifica="">impiegato</qualifica>
+</dipendente>

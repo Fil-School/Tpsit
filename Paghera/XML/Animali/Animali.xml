@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<animali>
+    <pet id="p01">
+    <nome>Fiolo</nome>
+    <razza id_razza="r01">Mastino</razza>
+    <pelo>Corto</pelo>
+    <anni>5</anni>
+    </pet>
+
+    <pet id="p02">
+    <nome>Peolo</nome>
+    <razza id_razza="r02">Lavico</razza>
+    <pelo>Lungo</pelo>
+    <anni>5</anni>
+    </pet>
+
+    <pet id="p03">
+    <nome>Nigabus</nome>
+    <razza id_razza="r02">Blacks</razza>
+    <pelo>Medio</pelo>
+    <anni>3</anni>
+    </pet>
+
+    <pet id="p04">
+    <nome>Thomas</nome>
+    <razza id_razza="r02">Turbatus</razza>
+    <pelo>Lungo</pelo>
+    <anni>1</anni>
+    </pet>
+</animali>
