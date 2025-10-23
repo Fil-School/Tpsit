@@ -2,3 +2,9 @@
 /Paghera/Socket/SocketServer/nbproject/private/
 /Paghera/Socket/SocketServer/build/
 /Paghera/Socket/SocketClient/build/
+/Paghera/Socket/TCPMultiClient/nbproject/private/
+/Paghera/Socket/TCPMultiServer/nbproject/private/
+/Paghera/Socket/TCPMultiServer/build/
+/Paghera/Socket/TCPMultiClient/build/
+/Paghera/Socket/TCPMultiServer/dist/
+/Paghera/Socket/TCPMultiClient/dist/
