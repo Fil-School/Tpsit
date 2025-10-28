@@ -18,19 +18,34 @@ import java.io.*;
        BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
        System.out.print("Per disconnettersi dal Server scrivere: QUIT\n");
        //Ciclo infinito per inserimento testo del Client
-       while (true) {
+       
+       boolean status = true;
+       
+       while (status == true) {
          System.out.print("Inserisci: ");
          String userInput = stdIn.readLine();
-         if (userInput.equals("QUIT"))
-           break;
+         if (userInput.equals("QUIT")) {
+            os.close();
+            is.close();
+            socket.close();
+         }
          os.writeBytes(userInput + '\n');
+         String a1 = is.readLine();
+         System.out.println(a1);
          System.out.println(is.readLine());
-         System.out.println(is.readLine());
+         
+         if (a1.equals("Corretto!!")) {
+         System.out.println(a1);
+            os.close();
+            is.close();
+            socket.close();       
+            status = false;
+            System.out.println("Chiusura gioco in corso");
+            System.exit(0);
+         }
        }
        //Chiusura dello Stream e del Socket
-       os.close();
-       is.close();
-       socket.close();
+
      }
      public static void main (String[] args) throws Exception {
        TCPMultiClient tcpClient = new TCPMultiClient();

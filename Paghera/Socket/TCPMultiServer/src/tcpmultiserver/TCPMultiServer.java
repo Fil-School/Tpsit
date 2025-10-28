@@ -27,9 +27,10 @@ import java.util.Random;
          DataOutputStream os = new DataOutputStream(socket.getOutputStream());
          while(true) {
            String userInput = is.readLine();
-           if (userInput == null || userInput.equals("QUIT"))
-             break;
-           
+           if (userInput == null || userInput.equals("QUIT")) {
+                os.close();
+                is.close();
+           }
            
            if (numeroLotto > Integer.parseInt(userInput)) {
                os.writeBytes("Errato! Il numero ");
@@ -45,15 +46,15 @@ import java.util.Random;
                os.writeBytes("Corretto!!" + '\n');
                os.writeBytes("Hai terminato il gioco con " + count + " tentativi/o" + '\n');
                count++;
+                os.close();
+                is.close();
+                socket.close();
+                System.exit(0);
            }
            
            System.out.println("Il Client ha scritto: " + userInput);
          }
-         os.close();
-         is.close();
-         System.out.println("Ho ricevuto una chiamata di chiusura da:\n" + socket +
-"\n");
-         socket.close();
+         
        }
        catch (IOException e) {
          System.out.println("IOException: " + e);
@@ -71,7 +72,7 @@ import java.util.Random;
          System.out.println("Ho ricevuto una chiamata di apertura da:\n" + socket);
          ServerThread serverThread = new ServerThread(socket);
          //Il metodo che permette la gestione del servizio sull'oggetto appena creato
-		 serverThread.start();
+	serverThread.start();
        }
      }
      public static void main (String[] args) throws Exception {
